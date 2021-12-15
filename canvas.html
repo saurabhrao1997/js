@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+
+        }
+
+        #canvas{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+
+
+
+
+    <script>
+        window.addEventListener("load",()=>{
+            const canvas =document.querySelector("#canvas");
+           const ctx =canvas.getContext("2d");
+
+
+
+           //resizing
+           canvas.height =window.innerHeight;
+           canvas.width =window.innerWidth;
+
+        //    ctx.lineWidth
+        //    ctx.strokeStyle="red"
+        //    ctx.strokeRect(50,50,100,500)
+        //    ctx.strokeRect(100,100,200,700)
+           
+        //  ctx.beginPath();
+        //  ctx.moveTo(100,100);
+        //  ctx.lineTo(200,100);
+        //  ctx.lineTo(200,150);
+        //  ctx.closePath();
+        //  ctx.stroke();
+
+
+
+        //variable...
+        let painting =false;
+
+        //eventlisner...
+
+        function startPosition(e){
+            painting =true;
+            draw(e);
+
+        }
+        function finishPosition(){
+            painting =false;
+            ctx.beginPath();
+
+        }
+        function draw(e){
+          if(!painting) return;
+        ctx.lineWidth=10;
+        ctx.lineCap="Round";
+        ctx.strokeStyle ="red";
+
+
+        ctx.lineTo(e.clientX,e.clientY);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(e.clientX,e.clientY);
+
+
+
+
+
+        }
+
+        canvas.addEventListener("mousedown",startPosition);
+        canvas.addEventListener("mouseup",finishPosition);
+        canvas.addEventListener("mousemove",draw);
+
+        });
+
+    </script>
+</body>
+</html>
