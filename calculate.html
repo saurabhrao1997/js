@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ <h1>calulate feild</h1><br>
+
+ <h1 id="answer"></h1><br>
+ <h1 id="val"></h1><br>
+
+ num1 <input type="text" id="num1">
+ <br>
+
+ num2 <input type="text" id="num2">
+ <br>
+ <button onclick="calculate()">calculate</button>
+
+ <script type="text/javascript">
+     function calculate()
+     {
+         var feild1=document.getElementById("num1").value;
+         var feild2 =document.getElementById("num2").value;
+
+     
+    var result=parseFloat(feild1) + parseFloat(feild2);
+    var sum=parseInt(feild1) + parseInt(feild2);
+    document.getElementById("answer").innerHTML="Anser is"+ result;
+    document.getElementById("val").innerHTML="Anser is"+ sum;
+
+
+     }
+
+
+ </script>
+
+
+
+</body>
+</html>
