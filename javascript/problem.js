@@ -14,7 +14,7 @@ let obj ={
     score:0
 }
 let msg = `your score is ${obj.score || 10}`;
-console.log(msg);
+console.log(msg);/// it console the 10 value because obj.score is 0 means(falsy)
 
 
 
@@ -25,10 +25,10 @@ const obj1 ={
     b:"two",
     c:"three"
 }
-console.log(obj1);
-console.log(obj1.a);
-console.log(obj1.b);
-console.log(obj1.c);
+console.log(obj1);   ///// it return object {}
+console.log(obj1.a); ///// it print value "one"
+console.log(obj1.b);/////it print value "two"
+console.log(obj1.c);////it print value "three"
 
 
 ////////////////////////////////
@@ -37,18 +37,18 @@ console.log(obj1.c);
 
 
 function getAge(...args){
-    console.log(typeof args);
-    console.log(args);
+    console.log(typeof args); ////it console the object as output
+    console.log(args);///////// it console the value but in array [21]
   
 
 }
 getAge(21);
-//////////
+////////// //////////////////////////////
 
 var p =[1,2,3,4]
 var q=[]
-console.log(typeof p);
-console.log(typeof q);
+console.log(typeof p);///// it result is object 
+console.log(typeof q);///// it result same as  object 
 
 
 ///////////////
@@ -57,25 +57,25 @@ let s =(a,b,c)=>{
     console.log(a,b,c)
 }
 
-s(4,8,12);
+s(4,8,12);///////// it print value 4 8 12 
 
 
 ////////////////////////////
 
 let profile = ["bob",34,"carpenter"];
 let[sname,age,job]=profile;
-console.log(sname);
+console.log(sname); ///// it print "bob"
 const d =profile.includes("bob");
-console.log(d);
+console.log(d);///// true
 
 const f =profile.includes("carpenter");
-console.log(f);
+console.log(f);///////////true
 ////////////////////////////
 const color =["red","green"];
 var result =color.includes("red");
-console.log(result);
+console.log(result);///// it print true
 var result =color.includes("green");
-console.log(result);
+console.log(result);//////it print true
 
 
 ////////////////////////////////////
@@ -90,7 +90,7 @@ const ram ={
 }
 
 const list =[john,ram];
-console.log(list);
+console.log(list); ///// it print array of object [{},{}]
 
 
 ////////////////////////////////////
@@ -101,20 +101,21 @@ console.log(list);
 let chars =["a","b","a","c","d","b"]
 
 var unique = new Set(chars);
-console.log(unique);///  output in obj form
+console.log(unique);///  output in obj form  {"a","b","c","d"}
 
 
 var unique = [...new Set(chars)];
-console.log(unique);///  output in array form
+console.log(unique);///  output in array form ["a","b","c","d"]
 
 
 
 //////// by using indexof and filter /////////////
 
 var result =chars.filter((value,index)=>{
-    return chars.index  Of(value)===index;
+    return chars.indexOf(value)===index;
 })
-console.log(result);
+console.log(result);//////output in array form ["a","b","c","d"]
+
 
 
 
